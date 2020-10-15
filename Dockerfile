@@ -3,7 +3,7 @@ ADD https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protob
 RUN apt update && \
     apt install file -y && \
     tar -zvxf protobuf-all-3.13.0.tar.gz && \
-    cd protobuf-all-3.13.0 && \
+    cd protobuf-3.13.0 && \
     ./configure --prefix=/usr/local/protobuf && \
     make && \
     make install

@@ -1,8 +1,9 @@
 FROM golang:1.14.10 as build
 ADD https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-all-3.13.0.tar.gz .
-WORKDIR /go/protobuf-3.13.0
 RUN apt update && \
     apt install file -y && \
+    tar -zvxf protobuf-all-3.13.0.tar.gz && \
+    cd protobuf-all-3.13.0 && \
     ./configure --prefix=/usr/local/protobuf && \
     make && \
     make install
